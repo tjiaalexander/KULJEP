@@ -1,0 +1,683 @@
+/* Import Google Fonts mewah */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;500&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 220px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #121212; /* gelap elegan */
+  color: #f0e6d2; /* krem lembut */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  background: linear-gradient(90deg, #000000cc, #3c2f1e);
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3); /* emas halus */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: gold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: default;
+  user-select: none;
+  text-shadow: 0 0 10px gold;
+}
+
+.navbar a {
+  color: #f0e6d2;
+  margin-left: 2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;  
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: gold;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: gold;
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  position: relative; /* 🔑 WAJIB */
+  background-image: url("./aset/bg_hero.jpeg");
+  height: 95vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 0 2rem;
+  color: gold;
+  text-shadow: 0 0 20px #c6a664;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 80%; /* turun dikit */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* 🔥 INI KUNCI SUPAYA TEKS MUNCUL */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 5px;
+}
+
+.hero p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  max-width: 700px;
+  letter-spacing: 2px;
+}
+
+/* Section Titles */
+.container h2,
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: gold;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 3px;
+  text-shadow: 0 0 8px #c6a664;
+}
+
+/* Cards Container */
+.container {
+  padding: 3rem 4rem;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  margin: 4rem auto;
+  max-width: 1200px;
+  box-shadow: 0 0 40px #c6a664aa;
+}
+
+#makanan {
+  position: relative;
+  background-image: url("./aset/makanan_hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+}
+
+#makanan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.50); /* 🔥 ATUR DI SINI */
+}
+
+#makanan > * {
+  position: relative;
+  z-index: 1;
+}
+
+#minuman {
+  position: relative;
+  background-image: url("./aset/minuman_hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+}
+
+#minuman::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.50); /* 🔥 ATUR DI SINI */
+}
+
+#minuman > * {
+  position: relative;
+  z-index: 1;
+}
+
+#jajanan {
+  position: relative;
+  background-image: url("./aset/jajanan_hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+}
+
+#jajanan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.50); /* 🔥 ATUR DI SINI */
+}
+
+#jajanan > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+/* Single Card */
+.card {
+  background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 0 10px #bfa052aa,
+    inset 0 0 8px #a58143aa;
+  width: 100%;
+  max-width: 320px;
+  color: #f0e6d2;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow:
+    0 10px 30px #f0d67eaa,
+    inset 0 0 15px #f9e69faa;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid gold;
+  filter: brightness(0.9);
+  transition: filter 0.4s ease;
+}
+
+.card:hover img {
+  filter: brightness(1);
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin: 1rem 0 0.5rem 0;
+  letter-spacing: 1.5px;
+  color: gold;
+  text-shadow: 0 0 6px #d1b24c;
+}
+
+.card p {
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0 1.5rem 2rem;
+  color: #d3c6a3;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* About Section */
+.about {
+  background: #1a1a1a;
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 3rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 0 30px #bfa052aa;
+  color: #d3c6a3;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.success-card {
+  max-width: 500px;
+  margin: 30px auto;
+  background: #858276;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease;
+}
+
+.success-card h3 {
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.success-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.success-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #857676;
+}
+
+.badge {
+  display: inline-block;
+  background: #38a169;
+  color: rgb(0, 0, 0);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.btn-reset {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  background: #2b6cb0;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.btn-reset:hover {
+  background: #2c5282;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.about p:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: gold;
+  text-shadow: 0 0 10px #c6a664;
+}
+
+/* Footer */
+footer {
+  background: #000000cc;
+  text-align: center;
+  padding: 1.8rem;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #a98e34;
+  text-shadow: 0 0 6px #c6a664bb;
+  font-family: 'Playfair Display', serif;
+  margin-top: 6rem;
+}
+
+/* tombol */
+.section-desc {
+  text-align: center;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #d3c6a3;
+}
+
+.container {
+  text-align: center;
+}
+
+.btn-menu {
+  text-align: center;
+  background: linear-gradient(90deg, gold, #c6a664);
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: block;
+  margin: 20px auto;
+}
+
+
+.btn-menu:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #f0d67eaa;
+}
+
+/* Order Form */
+.order {
+  max-width: 900px;
+  margin: 5rem auto;
+  padding: 3rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 35px #c6a664aa;
+}
+
+.order h2 {
+  font-family: 'Playfair Display', serif;
+  color: gold;
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #c6a664;
+}
+
+.order-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: #f0e6d2;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #2e2e2e;
+  color: #f0e6d2;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: inset 0 0 6px #a58143aa;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px gold;
+}
+
+.order-form button {
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, gold, #c6a664);
+  color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #f0d67eaa;
+}
+
+/* ================= ORDER FORM FIX ================= */
+
+/* Wrapper menu */
+#menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Item menu */
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr 90px 40px;
+  gap: 0.8rem;
+  align-items: center;
+
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  padding: 14px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 0 10px rgba(198, 166, 100, 0.35),
+    inset 0 0 6px rgba(165, 129, 67, 0.4);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 25px rgba(240, 214, 126, 0.4),
+    inset 0 0 10px rgba(249, 230, 159, 0.4);
+}
+
+/* Select & jumlah */
+.menu-item select,
+.menu-item .jumlah {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  background: #2e2e2e;
+  color: #f0e6d2;
+  font-size: 14px;
+  box-shadow: inset 0 0 6px #a58143aa;
+}
+
+.menu-item select:focus,
+.menu-item .jumlah:focus {
+  outline: none;
+  box-shadow: 0 0 10px gold;
+}
+
+/* Tombol hapus */
+.menu-item .hapus {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+
+  background: linear-gradient(135deg, #ff5c5c, #c53030);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item .hapus:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(255, 92, 92, 0.7);
+}
+
+/* Tombol tambah menu */
+#tambahMenu {
+  align-self: flex-start;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+
+  background: linear-gradient(90deg, gold, #c6a664);
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#tambahMenu:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px #f0d67eaa;
+}
+
+/* Total harga */
+#totalHarga {
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  color: gold;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: inset 0 0 10px #a58143aa;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .menu-item {
+    grid-template-columns: 1fr 80px 36px;
+  }
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+  color: #f0e6d2;
+  padding: 3rem 1.5rem 1.5rem;
+  box-shadow: inset 0 0 30px #a5814330;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2rem;
+}
+
+/* Info */
+.footer-info h3 {
+  color: gold;
+  margin-bottom: 0.5rem;
+}
+
+.footer-info p {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.footer-info label {
+  font-size: 13px;
+  color: #f0d67e;
+}
+
+.footer-info select {
+  margin-top: 6px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: #2a2a2a;
+  color: gold;
+  border: none;
+  box-shadow: inset 0 0 8px #a58143aa;
+}
+
+.footer-info select:focus {
+  outline: none;
+  box-shadow: 0 0 12px gold;
+}
+
+/* Map */
+.footer-map iframe {
+  width: 100%;
+  height: 260px;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 0 20px rgba(198, 166, 100, 0.5);
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-map iframe {
+    height: 220px;
+  }
+}
+
+
